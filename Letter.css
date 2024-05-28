@@ -1,17 +1,37 @@
-/* styles.css */
-@font-face {
-    font-family: 'Aptos';
-    src: url('path/to/aptos-font-file.woff2') format('woff2');
+/* Letter.css */
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-body {
-    font-family: 'Aptos', sans-serif;
-    font-size: 12px;
-    margin: 1in;
-    line-height: 1.5; /* Adds 1.5 line spacing */
+#passwordForm {
+    text-align: center;
 }
 
-p {
-    text-align: justify; /* Justifies the text in paragraphs */
+#passwordForm label {
+    font-weight: bold;
 }
 
+#passwordForm input {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#passwordForm button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#letterContent {
+    margin-top: 20px;
+    text-align: justify; /* Justify the text */
+}

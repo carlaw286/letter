@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Leah Fern'z</title>
-<link rel="stylesheet" type="text/css" href="Letter.css">
+    <title>Leah Fern'z</title>
+    <link rel="stylesheet" type="text/css" href="Letter.css">
 </head>
 <body>
 
-<p>To my serenity,<br><br>
+<div class="container">
+    <div id="passwordForm">
+        <label for="password">Are you Leah Fern'z?</label>
+        <input type="password" id="password" name="password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+    <div id="letterContent" style="display: none;">
+        <p>To my serenity,<br><br>
 
-    You will always be my peace. In spite of my chaos, you bring healing to my soul, even when I resist it. You have a way of reaching me that I can't deny. Today, I may not be fully healed yet, and the disasters of my past may sometimes resurface, but I can keep moving forward because of the book you gave me and your unwavering support. I will always cherish this and be forever grateful to you.<br><br>
-    
-    Please stay serene always. You are my role model. When I feel down or when everything falls apart, I think about how you handle struggles, and it helps me get back on track.<br><br>
-    
-    I've grown attached to you, and I'm scared of what might come next. I'll do my best to ensure nothing jeopardizes our friendship. May God bless you always. I wish you all the best. Be successful, help your family, and prove to those who doubted you that they were wrong. You control your fate.
-    </p>
-    <p1><br><br><br>
-        With gratitude and admiration,<br><br> - Kaloy<p2>
+            You will always be my peace. In spite of my chaos, you bring healing to my soul, even when I resist it. You have a way of reaching me that I can't deny. Today, I may not be fully healed yet, and the disasters of my past may sometimes resurface, but I can keep moving forward because of the book you gave me and your unwavering support. I will always cherish this and be forever grateful to you.<br><br>
+            
+            Please stay serene always. You are my role model. When I feel down or when everything falls apart, I think about how you handle struggles, and it helps me get back on track.<br><br>
+            
+            I've grown attached to you, and I'm scared of what might come next. I'll do my best to ensure nothing jeopardizes our friendship. May God bless you always. I wish you all the best. Be successful, help your family, and prove to those who doubted you that they were wrong. You control your fate.
+            <br><br>With gratitude and admiration,<br> - Kaloy </p>
+    </div>
+</div>
+
+<script>
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        if ((password === "Yes") || (password === "yes")) {
+            document.getElementById("passwordForm").style.display = "none";
+            document.getElementById("letterContent").style.display = "block";
+        } else {
+            alert("weeeeeeeeeeeeeeeeeeeee");
+        }
+    }
+</script>
 
 </body>
 </html>
