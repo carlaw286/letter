@@ -1,0 +1,17 @@
+/* styles.css */
+@font-face {
+    font-family: 'Aptos';
+    src: url('path/to/aptos-font-file.woff2') format('woff2');
+}
+
+body {
+    font-family: 'Aptos', sans-serif;
+    font-size: 12px;
+    margin: 1in;
+    line-height: 1.5; /* Adds 1.5 line spacing */
+}
+
+p {
+    text-align: justify; /* Justifies the text in paragraphs */
+}
+
