@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leah Fern'z</title>
+    <link rel="stylesheet" type="text/css" href="ziclYh19ud.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="passwordForm">
+        <label for="password">Are you Laralyn? if yes, input your crush name (2 letters)</label>
+        <input type="password" id="password" name="password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+    <div id="letterContent" style="display: none;">
+        <p>To my kindred spirit,<br><br>
+
+            I am amazed at how similar your personality is to mine. Although it sometimes irritates me, I don't mind because together, we excel at irritating others, and we do it so well. I hope that we can overcome our genuine, easily attached feelings, and that we won’t be the ones begging for love next time. I hope we’ll be appreciated and treated the way we deserve.
+<br><br>
+            
+You are too pure to be hurt by others’ actions towards you. It should be you confusing them with your mixed signals, not the other way around. It might sound silly for me to give advice, but I believe it could be good for you. 
+<br><br>
+            
+God bless you always. I will always be here if you need someone ka chismisan about your crushes.
+            <br><br>With affection and support,<br> - carlo marl </p>
+    </div>
+</div>
+
+<script>
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        if ((password === "JP") || (password === "jp")) {
+            document.getElementById("passwordForm").style.display = "none";
+            document.getElementById("letterContent").style.display = "block";
+        } else {
+            alert("wrong answer");
+        }
+    }
+</script>
+
+</body>
+</html>
