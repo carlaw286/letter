@@ -30,7 +30,28 @@
     cursor: pointer;
 }
 
+#pictureSelection {
+    text-align: center;
+}
+
+.picture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.picture-grid img {
+    width: 100%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.picture-grid img:hover {
+    border: 2px solid #007bff;
+}
+
 #letterContent {
     margin-top: 20px;
-    text-align: justify; /* Justify the text */
+    text-align: justify;
 }

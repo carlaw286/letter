@@ -12,27 +12,102 @@
         <input type="password" id="password" name="password">
         <button onclick="checkPassword()">Submit</button>
     </div>
-    <div id="letterContent" style="display: none;">
-        <p>To my serenity,<br><br>
-
-            You will always be my peace. In spite of my chaos, you bring healing to my soul, even when I resist it. You have a way of reaching me that I can't deny. Today, I may not be fully healed yet, and the disasters of my past may sometimes resurface, but I can keep moving forward because of the book you gave me and your unwavering support. I will always cherish this and be forever grateful to you.<br><br>
-            
-            Please stay serene always. You are my role model. When I feel down or when everything falls apart, I think about how you handle struggles, and it helps me get back on track.<br><br>
-            
-            I've grown attached to you, and I'm scared of what might come next. I'll do my best to ensure nothing jeopardizes our friendship. May God bless you always. I wish you all the best. Be successful, help your family, and prove to those who doubted you that they were wrong. You control your fate.
-            <br><br>With gratitude and admiration,<br> - Kaloy </p>
+    <div id="birthdayForm" style="display: none;">
+        <label for="birthday">Enter Kaloy's recent birthday (YYYY-MM-DD):</label>
+        <input type="text" id="birthday" name="birthday">
+        <button onclick="checkBirthday()">Submit</button>
     </div>
+    
+    <div id="fillInTheBlanks" style="display: none;">
+        <h2>Fill in the blanks:<br><br></h2>
+        <p>Ano ba itong nadarama oh <input type="text" id="blank1"></p>
+        <p>Ito ba'y <input type="text" id="blank2"> na ha</p>
+        <p>Totoo ba ang <input type="text" id="blank3"></p>
+        <p>Cause boy it feels so good</p>
+        <p>Bawat araw mas <input type="text" id="blank4"></p>
+        <p>Magmula nang nakita ka</p>
+        <p>Nawawala ang <input type="text" id="blank5"> pag ika'y kapiling na</p>
+        <p>Feels like summer when I'm with you (oh)</p>
+        <p>Parang islang pantropiko</p>
+        <p>Can't wait to go back with you (oh)</p>
+        <p>Sa islang pantropiko</p>
+        <button onclick="checkBlanks()">Submit</button>
+    </div>
+    <div id="letterContent" style="display: none;"></div>
 </div>
 
 <script>
+    const encodedContent = "CjxwPlRvIG15IHNlcmVuaXR5LDxicj48YnI+CllvdSB3aWxsIGFsd2F5cyBiZSBteSBwZWFjZS4gSW4gc3BpdGUgb2YgbXkgY2hhb3MsIHlvdSBicmluZyBoZWFsaW5nIHRvIG15IHNvdWwsIGV2ZW4gd2hlbiBJIHJlc2lzdCBpdC4gWW91IGhhdmUgYSB3YXkgb2YgcmVhY2hpbmcgbWUgdGhhdCBJIGNhbid0IGRlbnkuIFRvZGF5LCBJIG1heSBub3QgYmUgZnVsbHkgaGVhbGVkIHlldCwgYW5kIHRoZSBkaXNhc3RlcnMgb2YgbXkgcGFzdCBtYXkgc29tZXRpbWVzIHJlc3VyZmFjZSwgYnV0IEkgY2FuIGtlZXAgbW92aW5nIGZvcndhcmQgYmVjYXVzZSBvZiB0aGUgYm9vayB5b3UgZ2F2ZSBtZSBhbmQgeW91ciB1bndhdmVyaW5nIHN1cHBvcnQuIEkgd2lsbCBhbHdheXMgY2hlcmlzaCB0aGlzIGFuZCBiZSBmb3JldmVyIGdyYXRlZnVsIHRvIHlvdS48YnI+PGJyPgpQbGVhc2Ugc3RheSBzZXJlbmUgYWx3YXlzLiBZb3UgYXJlIG15IHJvbGUgbW9kZWwuIFdoZW4gSSBmZWVsIGRvd24gb3Igd2hlbiBldmVyeXRoaW5nIGZhbGxzIGFwYXJ0LCBJIHRoaW5rIGFib3V0IGhvdyB5b3UgaGFuZGxlIHN0cnVnZ2xlcywgYW5kIGl0IGhlbHBzIG1lIGdldCBiYWNrIG9uIHRyYWNrLjxicj48YnI+CkkndmUgZ3Jvd24gYXR0YWNoZWQgdG8geW91LCBhbmQgSSdtIHNjYXJlZCBvZiB3aGF0IG1pZ2h0IGNvbWUgbmV4dC4gSSdsbCBkbyBteSBiZXN0IHRvIGVuc3VyZSBub3RoaW5nIGplb3BhcmRpemVzIG91ciBmcmllbmRzaGlwLiBNYXkgR29kIGJsZXNzIHlvdSBhbHdheXMuIEkgd2lzaCB5b3UgYWxsIHRoZSBiZXN0LiBCZSBzdWNjZXNzZnVsLCBoZWxwIHlvdXIgZmFtaWx5LCBhbmQgcHJvdmUgdG8gdGhvc2Ugd2hvIGRvdWJ0ZWQgeW91IHRoYXQgdGhleSB3ZXJlIHdyb25nLiBZb3UgY29udHJvbCB5b3VyIGZhdGUuIAo8YnI+PGJyPldpdGggZ3JhdGl0dWRlIGFuZCBhZG1pcmF0aW9uLDxicj4gLSBLYWxveSA8L3A+Cg==";
+
+    var correctPassword = false;
+
+    function encodeToHash(str) {
+        var hash = 0;
+        if (str.length == 0) return hash;
+        for (var i = 0; i < str.length; i++) {
+            var char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; 
+        }
+        return hash;
+    }
+
     function checkPassword() {
         var password = document.getElementById("password").value;
-        if ((password === "Yes") || (password === "yes")) {
+        var hashedPassword = encodeToHash(password);
+        if ((hashedPassword === 119527) || (hashedPassword === 88775)) { 
             document.getElementById("passwordForm").style.display = "none";
-            document.getElementById("letterContent").style.display = "block";
+            document.getElementById("birthdayForm").style.display = "block";
+            alert("Hmmmm still doubtful, but let's proceed.");
+            correctPassword = true;
         } else {
             alert("weeeeeeeeeeeeeeeeeeeee");
         }
+    }
+
+    function checkBirthday() {
+        if (correctPassword) {
+            var birthday = document.getElementById("birthday").value;
+            var hashedBirthday = encodeToHash(birthday);
+            if (hashedBirthday === -613222460) { 
+                document.getElementById("birthdayForm").style.display = "none";
+                document.getElementById("fillInTheBlanks").style.display = "block";
+                alert("If you're Leah then you're good at this.");
+            } else {
+                alert("Incorrect birthday. You're not Leahlyn!");
+                window.close();
+            }
+        } else {
+            alert("Please enter the correct password first.");
+        }
+    }
+
+    function checkBlanks() {
+        var blank1 = document.getElementById("blank1").value;
+        var blank2 = document.getElementById("blank2").value;
+        var blank3 = document.getElementById("blank3").value;
+        var blank4 = document.getElementById("blank4").value;
+        var blank5 = document.getElementById("blank5").value;
+
+        var hashedBlank1 = encodeToHash(blank1);
+        var hashedBlank2 = encodeToHash(blank2);
+        var hashedBlank3 = encodeToHash(blank3);
+        var hashedBlank4 = encodeToHash(blank4);
+        var hashedBlank5 = encodeToHash(blank5);
+
+        if (hashedBlank1 === 49||3529656 && hashedBlank2 === 808359630||49 && hashedBlank3 === 49||-433268163 && hashedBlank4 === 49||-1762844084 && hashedBlank5 === 49||28150683) {
+            document.getElementById("fillInTheBlanks").style.display = "none";
+            document.getElementById("letterContent").style.display = "block";
+            decodeAndShowContent();
+        } else {
+            alert("You're not Leahlyn!");
+            window.close();
+        }
+    }
+
+    function decodeAndShowContent() {
+        var decodedContent = atob(encodedContent);
+        document.getElementById("letterContent").innerHTML = decodedContent;
     }
 </script>
 

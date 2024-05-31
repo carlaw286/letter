@@ -8,9 +8,20 @@
 
 <div class="container">
     <div id="passwordForm">
-        <label for="password">Are you Laralyn? if yes, input your crush name (2 letters)</label>
+        <label for="password">Are you Laralyn? if yes, input your crush name</label>
         <input type="password" id="password" name="password">
         <button onclick="checkPassword()">Submit</button>
+    </div>
+    <div id="pictureSelection" style="display: none;">
+        <p>Which one specifically:</p>
+        <div class="picture-grid">
+            <img src="Larlyn Crush\pic1.jpg" alt="pic1" onclick="checkPicture('pic1')">
+            <img src="Larlyn Crush\pic2.jpg" alt="pic2" onclick="checkPicture('pic2')">
+            <img src="Larlyn Crush\pic3.jpg" alt="pic3" onclick="checkPicture('pic3')">
+            <img src="Larlyn Crush\pic4.jpeg" alt="pic4" onclick="checkPicture('pic4')">
+            <img src="Larlyn Crush\pic5.jpg" alt="pic5" onclick="checkPicture('pic5')">
+            <img src="Larlyn Crush\pic6.jpg" alt="pic6" onclick="checkPicture('pic6')">
+        </div>
     </div>
     <div id="letterContent" style="display: none;">
         <p>To my kindred spirit,<br><br>
@@ -29,11 +40,23 @@ God bless you always. I will always be here if you need someone ka chismisan abo
 <script>
     function checkPassword() {
         var password = document.getElementById("password").value;
-        if ((password === "JP") || (password === "jp")) {
+        if ((password === "JP") || (password === "jp") || (password === "rotor") || (password === "Rotor") || (password === "Jp")) {
             document.getElementById("passwordForm").style.display = "none";
-            document.getElementById("letterContent").style.display = "block";
+            document.getElementById("pictureSelection").style.display = "block";
         } else {
-            alert("wrong answer");
+            alert("family name will do");
+        }
+    }
+
+    function checkPicture(selectedPicture) {
+        var correctPicture = "pic3"; // Change this to the correct picture
+        if (selectedPicture === correctPicture) {
+            alert("You're good.");
+            document.getElementById("pictureSelection").style.display = "none";
+            document.getElementById("letterContent").style.display = "block";
+            alert("You will be redirected to a letter, which I wrote from the bottom of my heart. Please keep it to yourself.");
+        } else {
+            alert("You are not Larlyn. Robot detected! Shooooo!");
         }
     }
 </script>
