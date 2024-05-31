@@ -1,6 +1,5 @@
 const letterContent = `
-<p>To my serenity,<br><br>
-Yo</p>
+aaa
 `;
 
 console.log(btoa(letterContent));
