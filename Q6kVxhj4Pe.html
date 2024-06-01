@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arjenlyn Niña</title>
+    <link rel="stylesheet" type="text/css" href="Q6kVxhj4Pe.css">
+</head>
+<body>
+    
+<div class="container">
+    <div id="passwordForm">
+        <label for="password">Arjen? if yes, whats your otakufest cosplay</label>
+        <input type="password" id="password" name="password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div id="imageForm" style="display: none;">
+        <h2>Identify the persons in the pictures (my crushes lol):<br><br></h2>
+        <div class="image-question">
+            <img src="Rgeanelyn/chichi.jpg" alt="Image 1">
+            <input type="text" id="answer1" placeholder="Who is this?">
+        </div>
+        <div class="image-question">
+            <img src="Rgeanelyn/poofling.jpg" alt="Image 2">
+            <input type="text" id="answer2" placeholder="Who is this?">
+        </div>
+        <div class="image-question">
+            <img src="Rgeanelyn/inamiing.jpg" alt="Image 3">
+            <input type="text" id="answer3" placeholder="Who is this?">
+        </div>
+        <div class="image-question">
+            <img src="Rgeanelyn/chippu.jpg" alt="Image 4">
+            <input type="text" id="answer4" placeholder="Who is this?">
+        </div>
+        <button onclick="checkImageAnswers()">Submit</button>
+    </div>
+
+    <div id="letterContent" style="display: none;">
+        
+        <div class="collage-background"></div>
+
+        <p>To my loads,</p>
+        <p>Hello Rgeanelyn, I was supposed to not to make this na kay personal nato ako message hahahaha, but to be fair I did it anyways, I did have fun mn sd hahahahahaha subraan ka daming time, please dont judge my work. </p>
+        <p>You're truly amazing, excelling in our subjects effortlessly. Your dedication and intelligence are a gift; be proud of them. Despite our differing views at times, your open-mindedness shines through. Keep standing up for what's right and what you believe in. Remember to rest when you're weary; your mental well-being is crucial for everyday life. And don't underestimate the power of saving; it may seem odd now, but it'll be a lifeline in tough times. As for this message, who knows where it'll end up, just keep the good vibes flowing maskin gloomy ka usahay hahaha And hey, atong plans laag me Olanggo haaa, Don't forget to swing by Bohol too; we'd love to have you visit.</p>
+        <p>Also, I must mention, your taste in anime is excellent, and your insights into politics are always enlightening. Oh, and just a friendly reminder: being a chinese spy might sound exciting in theory, but trust me, it's not worth the trouble!</p>
+        <p>p.s wala po akong maalala your honor</p>
+        <p>With friendship and encouragement,<br>Carl</p>
+    </div>
+</div>
+
+<script>
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        if ((password.toLowerCase() === "japanese school girl")) {
+            document.getElementById("passwordForm").style.display = "none";
+            
+            alert("hmmmf");
+            alert("let's proceed. This ones kinda tricky. Wrong answer, page will close.");
+            document.getElementById("imageForm").style.display = "block";
+        } else {
+            alert("three words with space");
+        }
+    }
+
+    function checkImageAnswers() {
+        var answer1 = document.getElementById("answer1").value;
+        var answer2 = document.getElementById("answer2").value;
+        var answer3 = document.getElementById("answer3").value;
+        var answer4 = document.getElementById("answer4").value;
+
+        if (answer1.toLowerCase() === "chichi" && answer2.toLowerCase() === "poofling" && answer3.toLowerCase() === "inamiing" && answer4.toLowerCase() === "chippu") {
+            document.getElementById("imageForm").style.display = "none";
+            alert("So I made another personal letter for uu hope u still read it despite its nonesenseness sometimes hahaha ");
+            document.getElementById("letterContent").style.display = "block";
+        } else {
+            alert("Incorrect answers. You are not Rgeane.");
+            window.close();
+        }
+    }
+</script>
+
+</body>
+</html>

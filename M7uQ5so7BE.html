@@ -8,7 +8,7 @@
 
 <div class="container">
     <div id="passwordForm">
-        <label for="password">Are you Leah Fern'z?</label>
+        <label for="password">Are you Leah Fern'z? If yes, give me the first name of the author of book of healing</label>
         <input type="password" id="password" name="password">
         <button onclick="checkPassword()">Submit</button>
     </div>
@@ -55,10 +55,11 @@
     function checkPassword() {
         var password = document.getElementById("password").value;
         var hashedPassword = encodeToHash(password);
-        if ((hashedPassword === 119527) || (hashedPassword === 88775)) { 
+        if ((hashedPassword === 75030017) || (hashedPassword === 104582689)) { 
             document.getElementById("passwordForm").style.display = "none";
             document.getElementById("birthdayForm").style.display = "block";
             alert("Hmmmm still doubtful, but let's proceed.");
+            alert("Wrong answers will result to termination of this page.");
             correctPassword = true;
         } else {
             alert("weeeeeeeeeeeeeeeeeeeee");

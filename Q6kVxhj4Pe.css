@@ -1,0 +1,64 @@
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#passwordForm, #imageForm {
+    text-align: center;
+}
+
+#passwordForm label, #imageForm label {
+    font-weight: bold;
+}
+
+#passwordForm input, #imageForm input {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#passwordForm button, #imageForm button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#letterContent {
+    margin-top: 20px;
+    text-align: justify; /* Justify the text */
+}
+
+.image-question {
+    margin: 15px 0;
+}
+
+.image-question img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.collage-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: url('cats/1.jpg') no-repeat,
+                url('cats/2.jpg') no-repeat,
+                url('cats/3.jpg') no-repeat,
+                url('cats/4.jpg') no-repeat;
+    background-size: 25% 25%, 25% 25%, 25% 25%, 25% 25%;
+    background-position: 0 0, 0 100%, 100% 0, 100% 100%;
+    opacity: 0.5; 
+}
