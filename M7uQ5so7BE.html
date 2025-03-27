@@ -37,7 +37,7 @@
 </div>
 
 <script>
-    const encodedContent = "CjxwPlRvIG15IHNlcmVuaXR5LDxicj48YnI+CllvdSB3aWxsIGFsd2F5cyBiZSBteSBwZWFjZS4gSW4gc3BpdGUgb2YgbXkgY2hhb3MsIHlvdSBicmluZyBoZWFsaW5nIHRvIG15IHNvdWwsIGV2ZW4gd2hlbiBJIHJlc2lzdCBpdC4gWW91IGhhdmUgYSB3YXkgb2YgcmVhY2hpbmcgbWUgdGhhdCBJIGNhbid0IGRlbnkuIFRvZGF5LCBJIG1heSBub3QgYmUgZnVsbHkgaGVhbGVkIHlldCwgYW5kIHRoZSBkaXNhc3RlcnMgb2YgbXkgcGFzdCBtYXkgc29tZXRpbWVzIHJlc3VyZmFjZSwgYnV0IEkgY2FuIGtlZXAgbW92aW5nIGZvcndhcmQgYmVjYXVzZSBvZiB0aGUgYm9vayB5b3UgZ2F2ZSBtZSBhbmQgeW91ciB1bndhdmVyaW5nIHN1cHBvcnQuIEkgd2lsbCBhbHdheXMgY2hlcmlzaCB0aGlzIGFuZCBiZSBmb3JldmVyIGdyYXRlZnVsIHRvIHlvdS48YnI+PGJyPgpQbGVhc2Ugc3RheSBzZXJlbmUgYWx3YXlzLiBZb3UgYXJlIG15IHJvbGUgbW9kZWwuIFdoZW4gSSBmZWVsIGRvd24gb3Igd2hlbiBldmVyeXRoaW5nIGZhbGxzIGFwYXJ0LCBJIHRoaW5rIGFib3V0IGhvdyB5b3UgaGFuZGxlIHN0cnVnZ2xlcywgYW5kIGl0IGhlbHBzIG1lIGdldCBiYWNrIG9uIHRyYWNrLjxicj48YnI+CkkndmUgZ3Jvd24gYXR0YWNoZWQgdG8geW91LCBhbmQgSSdtIHNjYXJlZCBvZiB3aGF0IG1pZ2h0IGNvbWUgbmV4dC4gSSdsbCBkbyBteSBiZXN0IHRvIGVuc3VyZSBub3RoaW5nIGplb3BhcmRpemVzIG91ciBmcmllbmRzaGlwLiBNYXkgR29kIGJsZXNzIHlvdSBhbHdheXMuIEkgd2lzaCB5b3UgYWxsIHRoZSBiZXN0LiBCZSBzdWNjZXNzZnVsLCBoZWxwIHlvdXIgZmFtaWx5LCBhbmQgcHJvdmUgdG8gdGhvc2Ugd2hvIGRvdWJ0ZWQgeW91IHRoYXQgdGhleSB3ZXJlIHdyb25nLiBZb3UgY29udHJvbCB5b3VyIGZhdGUuIAo8YnI+PGJyPldpdGggZ3JhdGl0dWRlIGFuZCBhZG1pcmF0aW9uLDxicj4gLSBLYWxveSA8L3A+Cg==";
+    const encodedContent = "PHA+VG8gbGVhaCw8YnI+PGJyPgpJdCdzIGEgcHJhbmtra2tra2tra2tra2tra2tra2tra2tra2tra2s8YnI+PGJyPgo8YnI+IC0gS2Fsb3kgPC9wPg==";
 
     var correctPassword = false;
 
@@ -75,8 +75,11 @@
                 document.getElementById("fillInTheBlanks").style.display = "block";
                 alert("If you're Leah then you're good at this.");
             } else {
-                alert("Incorrect birthday. You're not Leahlyn!");
-                window.close();
+                // alert("Incorrect birthday. You're not Leahlyn!");
+                // window.close();
+                
+                document.getElementById("birthdayForm").style.display = "none";
+                document.getElementById("fillInTheBlanks").style.display = "block";
             }
         } else {
             alert("Please enter the correct password first.");
